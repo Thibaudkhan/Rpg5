@@ -2,61 +2,79 @@ package fr.groupe4.cours.personnage;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Personnage {
 
-
-    private Map<String, Integer> caracteristique;
-
-    private int force;
-    private int intell;
-    private int dexterite;
-    private int sagesse;
-    private int constitution;
+    Map<String, Integer> map = new HashMap<>();
 
     public Personnage() {
 
-        caracteristique = new HashMap<>();
+        int points = 30;
 
-        caracteristique.put("Force" , 10);
-        caracteristique.put("Int" , 10);
-        caracteristique.put("Dext" , 10);
-        caracteristique.put("Sag" , 10);
-        caracteristique.put("Const" , 10);
+        map.put("Force", 0);
+        map.put("Intelligence", 0);
+        map.put("Dextérité", 0);
+        map.put("Sagesse", 0);
+        map.put("Constitution", 0);
 
-    }
-
-    public int getElement(String carac){
-        int nbCarac;
-        switch (carac){
-            case "Force":
-                force =  caracteristique.getOrDefault("Force", 10);
-                nbCarac = force ;
-                break;
-
-            case "Intelligence":
-                intell = caracteristique.getOrDefault("Int", 10);
-                nbCarac = intell ;
-                break;
-
-            case "Dextérité" :
-                dexterite = caracteristique.getOrDefault("Dext", 10);
-                nbCarac = dexterite;
-                break;
-
-            case "Sagesse" :
-                sagesse = caracteristique.getOrDefault("Sag", 10);
-                nbCarac = sagesse;
-                break;
-
-            case "Constitution" :
-                constitution = caracteristique.getOrDefault("Const", 10);
-                nbCarac = constitution;
-                break;
-
-            default :
-                nbCarac = 0;
+        while (points != 0) {
+        String entree;
+        System.out.println("Que voulez-vous modifier ?");
+        Scanner scanner = new Scanner(System.in);
+        entree = scanner.nextLine();
+            switch (entree) {
+                case "Force":
+                    System.out.println("Vous avez " + points);
+                    System.out.println("Combien voulez-vous assigner de points à force ?");
+                    Scanner sc = new Scanner(System.in);
+                    int valeurForce = Integer.valueOf(sc.nextLine());
+                    map.replace("Force", valeurForce);
+                    points -= valeurForce;
+                    System.out.println("Il vous reste " + points + " points.");
+                    break;
+                case "Intelligence":
+                    System.out.println("Vous avez " + points);
+                    System.out.println("Combien voulez-vous assigner de points à intelligence ?");
+                    Scanner sc2 = new Scanner(System.in);
+                    int valeurIntelligence = Integer.valueOf(sc2.nextLine());
+                    map.replace("Force", valeurIntelligence);
+                    points -= valeurIntelligence;
+                    System.out.println("Il vous reste " + points + " points.");
+                    break;
+                case "Dextérité":
+                    System.out.println("Vous avez " + points);
+                    System.out.println("Combien voulez-vous assigner de points à dextérité ?");
+                    Scanner sc3 = new Scanner(System.in);
+                    int valeurDexterite = Integer.valueOf(sc3.nextLine());
+                    map.replace("Force", valeurDexterite);
+                    points -= valeurDexterite;
+                    System.out.println("Il vous reste " + points + " points.");
+                    break;
+                case "Sagesse":
+                    System.out.println("Vous avez " + points);
+                    System.out.println("Combien voulez-vous assigner de points à sagesse ?");
+                    Scanner sc4 = new Scanner(System.in);
+                    int valeurSagesse = Integer.valueOf(sc4.nextLine());
+                    map.replace("Force", valeurSagesse);
+                    points -= valeurSagesse;
+                    System.out.println("Il vous reste " + points + " points.");
+                    break;
+                case "Constitution":
+                    System.out.println("Vous avez " + points);
+                    System.out.println("Combien voulez-vous assigner de points à constitution ?");
+                    Scanner sc5 = new Scanner(System.in);
+                    int valeurConstitution = Integer.valueOf(sc5.nextLine());
+                    map.replace("Force", valeurConstitution);
+                    points -= valeurConstitution;
+                    System.out.println("Il vous reste " + points + " points.");
+                    break;
+                default:
+                    System.out.println("Vous n'avez rien choisi");
+                    break;
+            }
         }
-        return nbCarac;
+
+        System.out.println(map);
     }
 }
