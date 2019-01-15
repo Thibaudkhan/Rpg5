@@ -24,7 +24,6 @@ public class Personnage {
     }
 
     public void setCarac() {
-        int points = 30;
         while (points > 0) {
 
             String entree;
@@ -33,7 +32,6 @@ public class Personnage {
             Scanner sc = new Scanner(System.in);
             entree = scanner.nextLine();
             System.out.println("Vous avez " + points);
-            int valeur = 0;
 
             switch (entree) {
                 case "Force":
