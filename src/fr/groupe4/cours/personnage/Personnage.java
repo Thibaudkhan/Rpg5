@@ -89,13 +89,15 @@ public class Personnage {
         }
         System.out.println(map);
     }
+    public int
 
+    /*
     public int verifValeur (int valeur, int points) {
         if (valeur >= points) {
             this.valeur = this.points;
         }
         return valeur;
-    }
+    }*/
 
     /*public int setElement(String carac, int trucEnPlus) {
         switch (carac) {
