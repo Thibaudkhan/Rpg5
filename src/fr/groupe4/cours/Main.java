@@ -12,7 +12,8 @@ public class Main {
 
         System.out.println("Hello World!");
 
-
+        Personnage perso = new Personnage();
+        System.out.println(perso.getElement("Intelligence"));
         createRace();
     }
 
