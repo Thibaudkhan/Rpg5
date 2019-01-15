@@ -21,7 +21,7 @@ public class Main {
         boolean choix = false;
         Scanner sc =  new Scanner(System.in);
         String nxtln = sc.nextLine();
-        while (choix != true){
+        while (!choix){
             if (nxtln.equals("Orc")) {
                 System.out.println("Votre choix est Orc");
                 choix = true;

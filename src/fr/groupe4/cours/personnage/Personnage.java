@@ -8,11 +8,11 @@ public class Personnage {
 
     private Map<String, Integer> caracteristique;
 
-    private Integer force = caracteristique.getOrDefault("Force", 10);
-    private Integer intell = caracteristique.getOrDefault("Int", 10);
-    private Integer dexterite = caracteristique.getOrDefault("Dext", 10);
-    private Integer sagesse = caracteristique.getOrDefault("Sag", 10);
-    private Integer constitution = caracteristique.getOrDefault("Const", 10);
+    private int force;
+    private int intell;
+    private int dexterite;
+    private int sagesse;
+    private int constitution;
 
     public Personnage() {
 
@@ -27,18 +27,33 @@ public class Personnage {
     }
 
     public int getElement(String carac){
-        int nbCarac = 0;
+        int nbCarac;
         switch (carac){
             case "Force":
+                force =  caracteristique.getOrDefault("Force", 10);
                 nbCarac = force ;
+                break;
+
             case "Intelligence":
+                intell = caracteristique.getOrDefault("Int", 10);
                 nbCarac = intell ;
+                break;
+
             case "Dextérité" :
+                dexterite = caracteristique.getOrDefault("Dext", 10);
                 nbCarac = dexterite;
+                break;
+
             case "Sagesse" :
+                sagesse = caracteristique.getOrDefault("Sag", 10);
                 nbCarac = sagesse;
+                break;
+
             case "Constitution" :
+                constitution = caracteristique.getOrDefault("Const", 10);
                 nbCarac = constitution;
+                break;
+
             default :
                 nbCarac = 0;
         }
