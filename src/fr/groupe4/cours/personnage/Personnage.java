@@ -7,10 +7,11 @@ import java.util.Scanner;
 public class Personnage {
 
     Map<String, Integer> map = new HashMap<>();
+    int points = 30;
+    int valeur = 0;
 
     public Personnage() {
 
-        int points = 30;
 
         map.put("Force", 0);
         map.put("Intelligence", 0);
@@ -18,63 +19,113 @@ public class Personnage {
         map.put("Sagesse", 0);
         map.put("Constitution", 0);
 
-        while (points != 0) {
-        String entree;
-        System.out.println("Que voulez-vous modifier ?");
-        Scanner scanner = new Scanner(System.in);
-        entree = scanner.nextLine();
+        setCarac();
+
+    }
+
+    public void setCarac() {
+        int points = 30;
+        while (points > 0) {
+
+            String entree;
+            System.out.println("Que voulez-vous modifier ?");
+            Scanner scanner = new Scanner(System.in);
+            Scanner sc = new Scanner(System.in);
+            entree = scanner.nextLine();
+            System.out.println("Vous avez " + points);
+            int valeur = 0;
+
             switch (entree) {
                 case "Force":
-                    System.out.println("Vous avez " + points);
+
                     System.out.println("Combien voulez-vous assigner de points à force ?");
-                    Scanner sc = new Scanner(System.in);
-                    int valeurForce = Integer.valueOf(sc.nextLine());
-                    map.replace("Force", valeurForce);
-                    points -= valeurForce;
-                    System.out.println("Il vous reste " + points + " points.");
+                    valeur = Integer.valueOf(sc.nextLine());
+                    verifValeur(valeur, points);
+                    map.replace("Force", valeur);
+                    points -= valeur;
                     break;
+
                 case "Intelligence":
-                    System.out.println("Vous avez " + points);
+
                     System.out.println("Combien voulez-vous assigner de points à intelligence ?");
-                    Scanner sc2 = new Scanner(System.in);
-                    int valeurIntelligence = Integer.valueOf(sc2.nextLine());
-                    map.replace("Force", valeurIntelligence);
-                    points -= valeurIntelligence;
-                    System.out.println("Il vous reste " + points + " points.");
+                    valeur = Integer.valueOf(sc.nextLine());
+                    verifValeur(valeur, points);
+                    map.replace("Intelligence", valeur);
+                    points -= valeur;
                     break;
+
                 case "Dextérité":
-                    System.out.println("Vous avez " + points);
+
                     System.out.println("Combien voulez-vous assigner de points à dextérité ?");
-                    Scanner sc3 = new Scanner(System.in);
-                    int valeurDexterite = Integer.valueOf(sc3.nextLine());
-                    map.replace("Force", valeurDexterite);
-                    points -= valeurDexterite;
-                    System.out.println("Il vous reste " + points + " points.");
+                    valeur = Integer.valueOf(sc.nextLine());
+                    verifValeur(valeur, points);
+                    map.replace("Dextérité", valeur);
+                    points -= valeur;
                     break;
+
                 case "Sagesse":
-                    System.out.println("Vous avez " + points);
+
                     System.out.println("Combien voulez-vous assigner de points à sagesse ?");
-                    Scanner sc4 = new Scanner(System.in);
-                    int valeurSagesse = Integer.valueOf(sc4.nextLine());
-                    map.replace("Force", valeurSagesse);
-                    points -= valeurSagesse;
-                    System.out.println("Il vous reste " + points + " points.");
+                    valeur = Integer.valueOf(sc.nextLine());
+                    verifValeur(valeur, points);
+                    map.replace("Sagesse", valeur);
+                    points -= valeur;
                     break;
+
                 case "Constitution":
-                    System.out.println("Vous avez " + points);
+
                     System.out.println("Combien voulez-vous assigner de points à constitution ?");
-                    Scanner sc5 = new Scanner(System.in);
-                    int valeurConstitution = Integer.valueOf(sc5.nextLine());
-                    map.replace("Force", valeurConstitution);
-                    points -= valeurConstitution;
-                    System.out.println("Il vous reste " + points + " points.");
+                    valeur = Integer.valueOf(sc.nextLine());
+                    verifValeur(valeur, points);
+                    map.replace("Constitution", valeur);
+                    points -= valeur;
                     break;
+
                 default:
                     System.out.println("Vous n'avez rien choisi");
                     break;
             }
-        }
 
+            System.out.println("Il vous reste " + points + " points.");
+
+        }
         System.out.println(map);
     }
+
+    public int verifValeur (int valeur, int points) {
+        if (valeur >= points) {
+            this.valeur = this.points;
+        }
+        return valeur;
+    }
+
+    /*public int setElement(String carac, int trucEnPlus) {
+        switch (carac) {
+            case "Force":
+                force = caracteristique.put("Force", trucEnPlus);
+                System.out.println(force);
+                return force;
+
+            case "Intelligence":
+                intell = caracteristique.put("Int", trucEnPlus);
+                System.out.println("Hello Case intell");
+                return intell;
+
+            case "Dextérité":
+                dexterite = caracteristique.put("Dext", trucEnPlus);
+                return dexterite;
+
+            case "Sagesse":
+                sagesse = caracteristique.put("Sag", trucEnPlus);
+                return sagesse;
+
+            case "Constitution":
+                constitution = caracteristique.put("Const", trucEnPlus);
+                return constitution;
+
+            default:
+                return 0;
+        }
+
+    }*/
 }
