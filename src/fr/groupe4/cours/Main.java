@@ -1,13 +1,11 @@
 package fr.groupe4.cours;
 
-import fr.groupe4.cours.personnage.Personnage;
-import fr.groupe4.cours.personnage.persoClasse.Magicien;
+import fr.groupe4.cours.personnage.Heros;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
-import static fr.groupe4.cours.personnage.Race.choixRace;
+
+import static fr.groupe4.cours.personnage.RaceEnum.choixRace;
 
 public class Main {
 
@@ -15,9 +13,8 @@ public class Main {
 
         System.out.println("Hello World!");
 
-
-        Personnage cible = new Personnage();
-
+        System.out.println("test");
+        Heros heros = new Heros();
         //System.out.println(perso.setElement("Ftaejkgn,dlk,l,lrce", 15));
         choixRace();
         createRace();

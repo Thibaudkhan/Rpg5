@@ -1,11 +1,13 @@
 package fr.groupe4.cours.personnage;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
-public class Heros {
+public class Heros extends Personnage {
+
+    public Heros() {
+        creerHeros();
+        setCarac();
+    }
 
     public enum Noms {
         Ason("Ason"),
@@ -27,13 +29,88 @@ public class Heros {
             this.name = name;
         }
     }
-    public void CreerHeros() {
+
+    public static void creerHeros () {
         List<Noms> listeNoms = Collections.unmodifiableList(Arrays.asList(Noms.values()));
         int tailleListe = listeNoms.size();
         Random random = new Random();
         String randomNom = String.valueOf(listeNoms.get(random.nextInt(tailleListe)));
-        System.out.println("Votre héros nommé " + randomNom + " apparaît. \nVeuillez lui assigner ses caractéristiques :");
-        System.out.println(randomNom);
 
+        System.out.println("Votre héros nommé " + randomNom + " apparaît. \nVeuillez lui assigner ses caractéristiques : ");
+    }
+
+    public void setCarac() {
+
+        while (points > 0) {
+            String entree;
+            System.out.println("Que voulez-vous modifier ?");
+            Scanner scanner = new Scanner(System.in);
+            entree = scanner.nextLine();
+            System.out.println("Vous avez " + points + " points");
+
+            switch (entree) {
+                case "Force":
+                    mettreCaract("Force");
+                    break;
+
+                case "Intelligence":
+                    mettreCaract("Intelligence");
+                    break;
+
+                case "Dextérité":
+                    mettreCaract("Dextérité");
+                    break;
+
+                case "Sagesse":
+                    mettreCaract("Sagesse");
+                    break;
+
+                case "Constitution":
+                    mettreCaract("Constitution");
+                    break;
+
+                default:
+                    System.out.println("Vous n'avez rien choisi");
+                    break;
+            }
+
+            System.out.println("Il vous reste " + points + " points.");
+
+        }
+        vie = map.get("Constitution");
+        System.out.println(map);
+    }
+
+    public int verifValeur(int valeur, int points) {
+
+        if (valeur >= points) {
+            this.valeur = this.points;
+        }
+        if (valeur >15){
+            System.out.println("Vous ne pouvez pas avoir plus de 15 points dans un caractéristique");
+            valeur = 15;
+        }
+        return valeur;
+    }
+
+    public int mettreCaract(String valeurCaract) {
+
+        System.out.println("Combien voulez-vous assigner de points à " + valeurCaract + "?");
+        valeur = Integer.valueOf(sc.nextLine());
+
+        if (valeur >= 8 && valeur <= 15) {
+            verifValeur(valeur, points);
+            map.merge(valeurCaract, valeur, Integer::sum);
+            points -= valeur;
+
+        } else if (points <= 8) {
+            verifValeur(valeur, points);
+            map.merge(valeurCaract, valeur, Integer::sum);
+            points -= valeur;
+
+        } else {
+            System.out.println("Vous devez assigner entre 8 et 15 points maximum à chaque capacité");
+        }
+        return valeur;
     }
 }
