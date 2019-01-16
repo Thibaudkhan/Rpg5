@@ -2,25 +2,7 @@ package fr.groupe4.cours.personnage;
 
 public class Race extends Personnage{
 
-    enum raceCaract {
-        HUMAIN("Humain"),
-        NAIN("Humain"),
-        ELFE("Humain"),
-        DEMIORQUE("Humain");
-
-        raceCaract(String nom) {
-        }
-    }
-
-    public static void main(String[] args) {
-        raceCaract type = raceCaract.NAIN;
-
-        Race es = new Race();
-        String texte = es.getTexte(type);
-        System.out.println(texte);
-    }
-
-    public String getTexte(raceCaract color) {
+    public String getTexte(RaceEnum.raceCaract choix) {
         String texte = "";
 
             int raceForce;
@@ -29,7 +11,7 @@ public class Race extends Personnage{
             int raceConstit;
             int raceDex;
 
-        switch (color) {
+        switch (choix) {
             case HUMAIN:
                 System.out.println("les caract qui monte");
 

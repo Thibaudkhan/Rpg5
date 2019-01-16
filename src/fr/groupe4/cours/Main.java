@@ -7,17 +7,20 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
+import static fr.groupe4.cours.personnage.Race.choixRace;
+
 public class Main {
 
     public static void main(String[] args) {
 
         System.out.println("Hello World!");
 
-        Magicien perso = new Magicien();
+
         Personnage cible = new Personnage();
-        perso.bouleDeFeu(cible);
+
         //System.out.println(perso.setElement("Ftaejkgn,dlk,l,lrce", 15));
-        //createRace();
+        choixRace();
+        createRace();
     }
 
     private static void createRace() {
