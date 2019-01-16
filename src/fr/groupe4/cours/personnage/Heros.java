@@ -86,13 +86,15 @@ public class Heros extends Race {
         if (valeur >= points) {
             this.valeur = this.points;
         }
-        if (valeur >15){
-            System.out.println("Vous ne pouvez pas avoir plus de 15 points dans un caractéristique");
-            valeur = 15;
-        }
         return valeur;
     }
-
+    public void verifValeurMax(){
+        if (getCaract("Force") > 15 || getCaract("Intelligence") > 15 || getCaract("Dextérité") > 15 || getCaract("Sagesse") > 15 || getCaract("Constitution") > 15){
+            System.out.println("Vous ne pouvez pas avoir plus de 15 points dans une caractéristique");
+            this.points+=this.valeur;
+            this.valeur = 15;
+        }
+    }
     public int mettreCaract(String valeurCaract) {
 
         System.out.println("Combien voulez-vous assigner de points à " + valeurCaract + "?");
@@ -102,11 +104,13 @@ public class Heros extends Race {
             verifValeur(valeur, points);
             map.merge(valeurCaract, valeur, Integer::sum);
             points -= valeur;
+            verifValeurMax();
 
         } else if (points <= 8) {
             verifValeur(valeur, points);
             map.merge(valeurCaract, valeur, Integer::sum);
             points -= valeur;
+            verifValeurMax();
 
         } else {
             System.out.println("Vous devez assigner entre 8 et 15 points maximum à chaque capacité");
