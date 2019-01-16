@@ -2,7 +2,7 @@ package fr.groupe4.cours.personnage;
 
 public class Race extends Personnage{
 
-    public String getTexte(RaceEnum.raceCaract choix) {
+    public String getTexte(RaceEnum choix) {
         String texte = "";
 
             int raceForce;

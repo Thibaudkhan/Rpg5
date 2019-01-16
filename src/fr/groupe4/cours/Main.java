@@ -4,7 +4,8 @@ import fr.groupe4.cours.personnage.Heros;
 
 import java.util.Scanner;
 
-import static fr.groupe4.cours.personnage.Race.choixRace;
+
+import static fr.groupe4.cours.personnage.RaceEnum.choixRace;
 
 public class Main {
 
