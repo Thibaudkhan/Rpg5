@@ -38,15 +38,14 @@ public class Personnage {
                 case "Force":
 
 
-                        mettreCaract("Force");
-                        break;
+                    mettreCaract("Force");
+                    break;
 
                 case "Intelligence":
 
 
-
-                        mettreCaract("Intelligence");
-                        break;
+                    mettreCaract("Intelligence");
+                    break;
 
 
                 case "Dextérité":
@@ -78,24 +77,25 @@ public class Personnage {
         System.out.println(map);
     }
 
-    public int verifValeur (int valeur, int points) {
+    public int verifValeur(int valeur, int points) {
         if (valeur >= points) {
             this.valeur = this.points;
         }
         return valeur;
 
     }
-    public int mettreCaract (String valeurCaract ) {
 
-            System.out.println("Combien voulez-vous assigner de points à " + valeurCaract + "?");
-            valeur = Integer.valueOf(sc.nextLine());
+    public int mettreCaract(String valeurCaract) {
+
+        System.out.println("Combien voulez-vous assigner de points à " + valeurCaract + "?");
+        valeur = Integer.valueOf(sc.nextLine());
         if (valeur >= 8 && valeur <= 15) {
             verifValeur(valeur, points);
-            map.replace(valeurCaract, valeur);
+            map.merge(valeurCaract, valeur, Integer::sum);
             points -= valeur;
 
-        }else{
-            System.out.println("Veuillez recommencer");
+        } else {
+            System.out.println("Vous devez assigner entre 8 et 15 points maximum à chaque capacité");
         }
         return valeur;
     }
