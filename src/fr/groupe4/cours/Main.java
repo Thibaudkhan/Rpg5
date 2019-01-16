@@ -13,29 +13,28 @@ public class Main {
 
         System.out.println("Hello World!");
 
-        Personnage perso = new Personnage();
-
+        Magicien perso = new Magicien();
+        Personnage cible = new Personnage();
+        perso.bouleDeFeu(cible);
         //System.out.println(perso.setElement("Ftaejkgn,dlk,l,lrce", 15));
         createRace();
     }
 
-    private static void createRace (){
+    private static void createRace() {
         boolean choix = false;
-        Scanner sc =  new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         String nxtln = sc.nextLine();
-        while (!choix){
+        while (!choix) {
             if (nxtln.equals("Orc")) {
                 System.out.println("Votre choix est Orc");
                 choix = true;
-            }
-            else if(nxtln.equals("Elfe")) {
+            } else if (nxtln.equals("Elfe")) {
                 System.out.println("Votre choix est Elfe");
                 choix = true;
-            }
-                else{
-                    System.out.println("Votre choix n'est pas valide");
-                    nxtln = sc.nextLine();
-                    choix = false;
+            } else {
+                System.out.println("Votre choix n'est pas valide");
+                nxtln = sc.nextLine();
+                choix = false;
             }
         }
     }

@@ -69,6 +69,10 @@ public class Personnage {
         if (valeur >= points) {
             this.valeur = this.points;
         }
+        if (valeur >15){
+            System.out.println("Vous ne pouvez pas avoir plus de 15 points dans un caractéristique");
+            valeur = 15;
+        }
         return valeur;
     }
 
@@ -93,20 +97,20 @@ public class Personnage {
     }
 
     public int getCaract(String carac) {
-        switch(carac) {
-            case "Force" :
+        switch (carac) {
+            case "Force":
                 return map.get("Force");
-            case "Intelligence" :
+            case "Intelligence":
                 return map.get("Intelligence");
-            case "Dextérité" :
+            case "Dextérité":
                 return map.get("Dextérité");
-            case "Sagesse" :
+            case "Sagesse":
                 return map.get("Sagesse");
-            case "Constitution" :
+            case "Constitution":
                 return map.get("Constitution");
-            case "Vie" :
+            case "Vie":
                 return vie;
-            default :
+            default:
                 return 0;
         }
     }
