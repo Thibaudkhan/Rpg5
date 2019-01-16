@@ -10,9 +10,5 @@ public enum RaceEnum {
 
     RaceEnum(String nom) {
         }
-    public static void choixRace(){
-        RaceEnum type = RaceEnum.HUMAIN;
-        //Race es = new Race();
 
-    }
 }

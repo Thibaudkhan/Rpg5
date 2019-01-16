@@ -1,11 +1,9 @@
 package fr.groupe4.cours;
 
 import fr.groupe4.cours.personnage.Heros;
+import fr.groupe4.cours.personnage.Race;
 
 import java.util.Scanner;
-
-
-import static fr.groupe4.cours.personnage.RaceEnum.choixRace;
 
 public class Main {
 
@@ -15,8 +13,9 @@ public class Main {
 
         System.out.println("test");
         Heros heros = new Heros();
+        heros.choixRace();
+        Race es = new Race();
         //System.out.println(perso.setElement("Ftaejkgn,dlk,l,lrce", 15));
-        choixRace();
         createRace();
     }
 

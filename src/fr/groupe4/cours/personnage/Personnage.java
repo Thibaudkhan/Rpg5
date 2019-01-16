@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Personnage {
 
     protected Map<String, Integer> map = new HashMap<>();
-    protected int points = 60;
+    protected int points = 15;
     protected int valeur = 0;
     protected int vie;
     Scanner sc = new Scanner(System.in);

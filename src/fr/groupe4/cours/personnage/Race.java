@@ -1,9 +1,36 @@
 package fr.groupe4.cours.personnage;
 
+import java.util.Scanner;
+
 public class Race extends Personnage{
 
-    public String getTexte(RaceEnum choix) {
-        String texte = "";
+    public void choixRace(){
+        boolean choixCaract = false;
+        Scanner scanR = new Scanner(System.in);
+        String nxtln = scanR.nextLine();
+        RaceEnum type = null;
+        while (choixCaract != true)
+        if(nxtln.equals("Humain")){
+            type = RaceEnum.HUMAIN;
+            choixCaract = true;
+        }else if (nxtln.equals("Nain")){
+            type = RaceEnum.NAIN;
+            choixCaract = true;
+        }else if (nxtln.equals("Elfe")){
+            type = RaceEnum.ELFE;
+            choixCaract = true;
+        }else if (nxtln.equals("Demi-Orque")){
+            type = RaceEnum.DEMIORQUE;
+        }else{
+            choixCaract = false;
+        }
+        if (type != null){
+            setCaract(type);
+        }
+
+    }
+
+    public void setCaract(RaceEnum type) {
 
             int raceForce;
             int raceInt;
@@ -11,10 +38,10 @@ public class Race extends Personnage{
             int raceConstit;
             int raceDex;
 
-        switch (choix) {
+
+        switch (type) {
             case HUMAIN:
                 System.out.println("les caract qui monte");
-
                 raceForce = this.getCaract("Force");
                 raceForce += 1;
                 raceInt = this.getCaract("Intelligence");
@@ -68,6 +95,5 @@ public class Race extends Personnage{
             default:
                 break;
         }
-        return texte;
     }
 }

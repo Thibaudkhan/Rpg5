@@ -2,7 +2,7 @@ package fr.groupe4.cours.personnage;
 
 import java.util.*;
 
-public class Heros extends Personnage {
+public class Heros extends Race {
 
     public Heros() {
         creerHeros();
@@ -30,7 +30,7 @@ public class Heros extends Personnage {
         }
     }
 
-    public static void creerHeros () {
+    public void creerHeros () {
         List<Noms> listeNoms = Collections.unmodifiableList(Arrays.asList(Noms.values()));
         int tailleListe = listeNoms.size();
         Random random = new Random();
