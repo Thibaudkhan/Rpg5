@@ -6,10 +6,12 @@ import java.util.Scanner;
 
 public class Personnage {
 
-    Map<String, Integer> map = new HashMap<>();
-    int points = 30;
-    int valeur = 0;
+    private Map<String, Integer> map = new HashMap<>();
+    private int points = 30;
+    private int valeur = 0;
+    private int vie;
     Scanner sc = new Scanner(System.in);
+
     public Personnage() {
 
         map.put("Force", 0);
@@ -21,6 +23,7 @@ public class Personnage {
     }
 
     public void setCarac() {
+
         while (points > 0) {
             String entree;
             System.out.println("Que voulez-vous modifier ?");
@@ -57,15 +60,16 @@ public class Personnage {
             System.out.println("Il vous reste " + points + " points.");
 
         }
+        vie = map.get("Constitution");
         System.out.println(map);
     }
 
     public int verifValeur(int valeur, int points) {
+
         if (valeur >= points) {
             this.valeur = this.points;
         }
         return valeur;
-
     }
 
     public int mettreCaract(String valeurCaract) {
@@ -86,5 +90,24 @@ public class Personnage {
             System.out.println("Vous devez assigner entre 8 et 15 points maximum à chaque capacité");
         }
         return valeur;
+    }
+
+    public int getCaract(String carac) {
+        switch(carac) {
+            case "Force" :
+                return map.get("Force");
+            case "Intelligence" :
+                return map.get("Intelligence");
+            case "Dextérité" :
+                return map.get("Dextérité");
+            case "Sagesse" :
+                return map.get("Sagesse");
+            case "Constitution" :
+                return map.get("Constitution");
+            case "Vie" :
+                return vie;
+            default :
+                return 0;
+        }
     }
 }

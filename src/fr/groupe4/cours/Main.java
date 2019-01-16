@@ -1,6 +1,7 @@
 package fr.groupe4.cours;
 
 import fr.groupe4.cours.personnage.Personnage;
+import fr.groupe4.cours.personnage.persoClasse.Magicien;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +14,7 @@ public class Main {
         System.out.println("Hello World!");
 
         Personnage perso = new Personnage();
+
         //System.out.println(perso.setElement("Ftaejkgn,dlk,l,lrce", 15));
         createRace();
     }
