@@ -16,7 +16,6 @@ public class Main {
         System.out.println("test");
         Heros heros = new Heros();
         //System.out.println(perso.setElement("Ftaejkgn,dlk,l,lrce", 15));
-        choixRace();
         createRace();
     }
 
