@@ -13,10 +13,10 @@ public class Main {
 
         System.out.println("test");
         Heros heros = new Heros();
+
         heros.choixRace();
         Race es = new Race();
         //System.out.println(perso.setElement("Ftaejkgn,dlk,l,lrce", 15));
-        createRace();
     }
 
     private static void createRace() {

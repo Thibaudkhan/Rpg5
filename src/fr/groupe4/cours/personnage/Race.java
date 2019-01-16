@@ -5,27 +5,30 @@ import java.util.Scanner;
 public class Race extends Personnage{
 
     public void choixRace(){
+        System.out.println("Choisis ta race entre Humain, Nain, Elfe, Demi-Orque");
         boolean choixCaract = false;
         Scanner scanR = new Scanner(System.in);
         String nxtln = scanR.nextLine();
         RaceEnum type = null;
-        while (choixCaract != true)
-        if(nxtln.equals("Humain")){
-            type = RaceEnum.HUMAIN;
-            choixCaract = true;
-        }else if (nxtln.equals("Nain")){
-            type = RaceEnum.NAIN;
-            choixCaract = true;
-        }else if (nxtln.equals("Elfe")){
-            type = RaceEnum.ELFE;
-            choixCaract = true;
-        }else if (nxtln.equals("Demi-Orque")){
-            type = RaceEnum.DEMIORQUE;
-        }else{
-            choixCaract = false;
-        }
-        if (type != null){
-            setCaract(type);
+        while (choixCaract != true) {
+
+            if (nxtln.equals("Humain")) {
+                type = RaceEnum.HUMAIN;
+                choixCaract = true;
+            } else if (nxtln.equals("Nain")) {
+                type = RaceEnum.NAIN;
+                choixCaract = true;
+            } else if (nxtln.equals("Elfe")) {
+                type = RaceEnum.ELFE;
+                choixCaract = true;
+            } else if (nxtln.equals("Demi-Orque")) {
+                type = RaceEnum.DEMIORQUE;
+            } else {
+                choixCaract = false;
+            }
+            if (type != null) {
+                setCaract(type);
+            }
         }
 
     }
