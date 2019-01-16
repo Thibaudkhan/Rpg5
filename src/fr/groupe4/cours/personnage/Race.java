@@ -22,38 +22,43 @@ public class Race extends Personnage{
     public String getTexte(raceCaract color) {
         String texte = "";
 
+            int raceForce;
+            int raceInt;
+            int raceSage;
+            int raceConstit;
+            int raceDex;
 
         switch (color) {
             case HUMAIN:
                 System.out.println("les caract qui monte");
 
-                int HumanForce = this.getCaract("Force");
-                HumanForce += 1;
-                int HumanInt = this.getCaract("Intelligence");
-                HumanInt += 1;
-                int HumanSag = this.getCaract("Sagesse");
-                HumanSag += 1;
-                int HumanConstit = this.getCaract("Constitution");
-                HumanConstit += 1;
-                int HumanDex = this.getCaract("Dextérité");
-                HumanDex += 1;
-                System.out.println(HumanForce);
-                System.out.println(HumanInt);
-                System.out.println(HumanSag);
-                System.out.println(HumanConstit);
-                System.out.println(HumanDex);
+                raceForce = this.getCaract("Force");
+                raceForce += 1;
+                raceInt = this.getCaract("Intelligence");
+                raceInt += 1;
+                raceSage = this.getCaract("Sagesse");
+                raceSage += 1;
+                raceConstit = this.getCaract("Constitution");
+                raceConstit += 1;
+                raceDex = this.getCaract("Dextérité");
+                raceDex += 1;
+                System.out.println(raceForce);
+                System.out.println(raceInt);
+                System.out.println(raceSage);
+                System.out.println(raceConstit);
+                System.out.println(raceDex);
 
                 break;
             case NAIN:
-                int NainForce = this.getCaract("Force");
-                NainForce += 3;
-                int NainConstit = this.getCaract("Constitution");
-                NainConstit += 1;
-                int NainInt = this.getCaract("Intelligence");
-                NainInt -= 1;
-                System.out.println(NainForce);
-                System.out.println(NainInt);
-                System.out.println(NainConstit);
+                raceForce = this.getCaract("Force");
+                raceForce += 3;
+                raceConstit = this.getCaract("Constitution");
+                raceConstit += 1;
+                raceInt = this.getCaract("Intelligence");
+                raceInt -= 1;
+                System.out.println(raceForce);
+                System.out.println(raceConstit);
+                System.out.println(raceInt);
                 break;
             case ELFE:
                 int ElfeInt = this.getCaract("Intelligence");
@@ -67,7 +72,15 @@ public class Race extends Personnage{
                 System.out.println(ElfeSag);
                 break;
             case DEMIORQUE:
-                texte = "";
+                raceForce = this.getCaract("Force");
+                raceForce += 2;
+                raceConstit = this.getCaract("Constitution");
+                raceConstit += 2;
+                raceInt = this.getCaract("Intelligence");
+                raceInt -= 1;
+                System.out.println(raceForce);
+                System.out.println(raceConstit);
+                System.out.println(raceInt);
                 break;
             default:
                 break;
