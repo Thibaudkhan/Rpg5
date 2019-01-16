@@ -94,6 +94,11 @@ public class Personnage {
             map.merge(valeurCaract, valeur, Integer::sum);
             points -= valeur;
 
+        } else if (points <= 8) {
+            verifValeur(valeur, points);
+            map.merge(valeurCaract, valeur, Integer::sum);
+            points -= valeur;
+
         } else {
             System.out.println("Vous devez assigner entre 8 et 15 points maximum à chaque capacité");
         }
