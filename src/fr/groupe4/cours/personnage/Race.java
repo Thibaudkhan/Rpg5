@@ -11,6 +11,7 @@ public class Race extends Personnage{
         raceCaract(String nom) {
         }
     }
+
     public static void main(String[] args) {
         raceCaract type = raceCaract.NAIN;
 

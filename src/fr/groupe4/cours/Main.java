@@ -17,7 +17,7 @@ public class Main {
         Personnage cible = new Personnage();
         perso.bouleDeFeu(cible);
         //System.out.println(perso.setElement("Ftaejkgn,dlk,l,lrce", 15));
-        createRace();
+        //createRace();
     }
 
     private static void createRace() {

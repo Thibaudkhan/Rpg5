@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Personnage {
 
     private Map<String, Integer> map = new HashMap<>();
-    private int points = 30;
+    private int points = 60;
     private int valeur = 0;
     private int vie;
     Scanner sc = new Scanner(System.in);
@@ -80,6 +80,7 @@ public class Personnage {
 
         System.out.println("Combien voulez-vous assigner de points à " + valeurCaract + "?");
         valeur = Integer.valueOf(sc.nextLine());
+
         if (valeur >= 8 && valeur <= 15) {
             verifValeur(valeur, points);
             map.merge(valeurCaract, valeur, Integer::sum);
