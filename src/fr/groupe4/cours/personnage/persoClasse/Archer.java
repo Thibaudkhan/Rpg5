@@ -1,8 +1,9 @@
 package fr.groupe4.cours.personnage.persoClasse;
 
+import fr.groupe4.cours.personnage.Heros;
 import fr.groupe4.cours.personnage.Personnage;
 
-public class Archer extends Personnage {
+public class Archer extends Heros {
 
     public Archer() {
 
@@ -39,7 +40,7 @@ public class Archer extends Personnage {
     }
 
     public void Attaque_Sournoise(Personnage cible){
-        int archerDex = this.getCaract("Dextérité")
+        int archerDex = this.getCaract("Dextérité");
         int archerVie = this.getCaract("Vie");
         int cibleVie = cible.getCaract("Vie");
         int nb = (int) (Math.random() * 100);

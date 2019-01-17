@@ -1,8 +1,9 @@
 package fr.groupe4.cours.personnage.persoClasse;
 
+import fr.groupe4.cours.personnage.Heros;
 import fr.groupe4.cours.personnage.Personnage;
 
-public class Magicien extends Personnage {
+public class Magicien extends Heros {
 
     public Magicien() {
 
